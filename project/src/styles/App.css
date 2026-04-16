@@ -1,49 +1,65 @@
-/* src/styles/App.css */
-
-/* .header — flex, space-between, align center, padding, blue bg, white text */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 2rem;
-  background-color: #0077cc;
-  color: #fff;
-}
-
-/* .header__brand — larger bold text */
-.header__brand {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-/* .header__nav — flex with gap between links, semi-bold */
-.header__nav {
-  display: flex;
+/* Cards grid */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   gap: 1rem;
-  font-weight: 600;
+  padding: 1rem;
 }
 
-/* .search-bar — padding to offset it from the header */
-.search-bar {
-  padding: 1rem 2rem;
+/* Card */
+.card {
+  display: block;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  color: inherit;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-/* .search-bar__input — full width up to ~480px, padding, border, border-radius */
-.search-bar input {
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Flag image */
+.card__flag {
   width: 100%;
-  max-width: 480px;
-  padding: 0.5rem 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  height: 160px;
+  object-fit: cover;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }
 
-/* .home — padding */
-.home {
-  padding: 2rem;
+/* Card body */
+.card__body {
+  padding: 1rem;
 }
 
-/* .home__placeholder — muted color, top margin */
-.home__placeholder {
-  margin-top: 1rem;
+.card__name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.card__body p {
+  font-size: 0.9rem;
   color: #666;
+  margin: 0.25rem 0;
+}
+
+.card__body p span {
+  font-weight: 600;
+  color: #333;
+}
+
+/* Home status */
+.home__status {
+  padding: 1rem;
+  color: #666;
+}
+
+.home__status--error {
+  color: #d00;
 }
